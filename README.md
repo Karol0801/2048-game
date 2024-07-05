@@ -1,5 +1,4 @@
 # 2048 game
-#### _Project in progress_
 
 ### Introduction
 The main goal of the project is to develop an algorithm using genetic algorithm that efficiently plays the 2048 game. The project was created with colleagues as a final project for a university course titled "Stochastic Methods in Machine Learning".
