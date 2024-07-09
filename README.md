@@ -28,15 +28,15 @@ For each terminal state in the tree, a score is returned, which is a linear comb
 Our experiments have shown that different sets of parameters influence the extent to which individual metrics contribute to the final score, and consequently to the decisions made. Some parameter sets performed better, so we use a genetic algorithm to optimize these parameters to achieve the best possible results.
 
 
-##### 1) Empty tile heuristic
+##### 1) Empty tiles
 Essentially, this heuristic awards extra points for each empty tile on the board. Maintaining a minimal number of occupied tiles is crucial. Failing to do so results in a rapid filling of the board, leading to game over.
-##### 2) Smoothness heuristic
+##### 2) Smoothness
 We aim to minimize the disparity between adjacent tiles by penalizing significant differences in their values. This strategy ensures that neighboring tiles remain as close in value as possible.
-##### 3) Big tiles in border heurisitc
+##### 3) Big tiles in border
 For every tiles in the grid, we give penalty if it is placed in the middle of the grid. The amount of the penalty is _C x distance to the nearest border x tile value_ where C is some constant.
-##### 4) Max value heuristic
+##### 4) Max value
 It just return the maximum value.
-##### 5) Weighted tiles heuristic
+##### 5) Weighted tiles
 The "weighted tiles" or "snake" heuristic is a strategy that assigns weights to each tile based on its position on the board. The idea behind this heuristic is to encourage the formation of a specific pattern of values across the board that resembles the shape of a snake. By using this, the algorithm aims to maximize the potential for merging tiles and creating higher valued tiles.
 ```
 score_grid = [2 ** 15, 2 ** 14, 2 ** 13, 2 ** 12,
@@ -46,5 +46,4 @@ score_grid = [2 ** 15, 2 ** 14, 2 ** 13, 2 ** 12,
 ```
 
 ## Results
-
-
+The results show that 'weighted tiles' and 'max value' are the most meaningful metrics. We obtained a set of parameters that enables our algorithm to win about 20% of games it plays. Despite the high randomness of the problem, it is possible to achieve higher results. Perhaps someone will build upon this in the future.
