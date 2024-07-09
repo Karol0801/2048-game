@@ -29,15 +29,15 @@ Our experiments have shown that different sets of parameters influence the exten
 
 
 ##### 1) Empty tiles
-Essentially, this heuristic awards extra points for each empty tile on the board. Maintaining a minimal number of occupied tiles is crucial. Failing to do so results in a rapid filling of the board, leading to game over.
+Essentially, this metric awards extra points for each empty tile on the board. Maintaining a minimal number of occupied tiles is crucial. Failing to do so results in a rapid filling of the board, leading to game over.
 ##### 2) Smoothness
 We aim to minimize the disparity between adjacent tiles by penalizing significant differences in their values. This strategy ensures that neighboring tiles remain as close in value as possible.
 ##### 3) Big tiles in border
 For every tiles in the grid, we give penalty if it is placed in the middle of the grid. The amount of the penalty is _C x distance to the nearest border x tile value_ where C is some constant.
 ##### 4) Max value
-It just return the maximum value.
+It just returns the maximum value.
 ##### 5) Weighted tiles
-The "weighted tiles" or "snake" heuristic is a strategy that assigns weights to each tile based on its position on the board. The idea behind this heuristic is to encourage the formation of a specific pattern of values across the board that resembles the shape of a snake. By using this, the algorithm aims to maximize the potential for merging tiles and creating higher valued tiles.
+The "weighted tiles" or "snake" metric is a strategy that assigns weights to each tile based on its position on the board. The idea behind this metric is to encourage the formation of a specific pattern of values across the board that resembles the shape of a snake. By using this, the algorithm aims to maximize the potential for merging tiles and creating higher valued tiles.
 ```
 score_grid = [2 ** 15, 2 ** 14, 2 ** 13, 2 ** 12,
                   2 ** 8, 2 ** 9, 2 ** 10, 2 ** 11,
